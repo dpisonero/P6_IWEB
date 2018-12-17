@@ -1,6 +1,6 @@
 import React from 'react';
 import Content from "./Content";
-import Actionbar from "./Actionbar";
+import Button from "./Button"
 
 export default class Game extends React.Component {
 
@@ -17,7 +17,7 @@ export default class Game extends React.Component {
                 <div>
                     <Content question={this.props.question} onQuestionAnswer={this.props.onQuestionAnswer}/>
 
-                    <Actionbar question={this.props.question} onNextQuestion={this.props.onNextQuestion} onPreviousQuestion={this.props.onPreviousQuestion}/>
+                    <Button question={this.props.question} onNextQuestion={this.props.onNextQuestion} onPreviousQuestion={this.props.onPreviousQuestion}/>
 
                 </div>
             );

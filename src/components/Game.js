@@ -1,5 +1,6 @@
 import React from 'react';
 import Content from "./Content";
+import Actionbar from "./Actionbar";
 
 export default class Game extends React.Component {
 
@@ -16,11 +17,7 @@ export default class Game extends React.Component {
                 <div>
                     <Content question={this.props.question} onQuestionAnswer={this.props.onQuestionAnswer}/>
 
-                    <button id="next" onClick = {() => {this.props.onNextQuestion()}}> Siguiente pregunta </button>
-
-                    <button id="previous" onClick = {() => {this.props.onPreviousQuestion()}}> Pregunta anterior </button>
-
-                    <button id="submit" onClick={() => {this.props.onSubmit(this.props.questions)}}>Evaluar respuestas</button>
+                    <Actionbar question={this.props.question} onNextQuestion={this.props.onNextQuestion} onPreviousQuestion={this.props.onPreviousQuestion}/>
 
                 </div>
             );

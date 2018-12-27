@@ -8,14 +8,19 @@ import { submit } from "../redux/actions";
 
 class App extends Component {
     render() {
+        console.log(this.props.questions);
         console.log(this.props.questions[this.props.currentQuestion]);
         return (
             <div>
                 <Game question={this.props.questions[this.props.currentQuestion]}
 
+                      questions={this.props.questions}
+
                       onQuestionAnswer={(answer) => {
                           this.props.dispatch(questionAnswer(this.props.currentQuestion, answer))
                       }}
+
+                      score={this.props.score}
 
                       onNextQuestion={() => {
                           this.props.dispatch(changeQuestion(this.props.currentQuestion + 1))
@@ -25,7 +30,7 @@ class App extends Component {
                           this.props.dispatch(changeQuestion(this.props.currentQuestion - 1))
                       }}
 
-                      onSubmit = {(questions) => {
+                      onSubmitQuestion = {(questions) => {
                           this.props.dispatch(submit(questions))
                       }}/>
             </div>

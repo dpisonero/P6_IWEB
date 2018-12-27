@@ -6,11 +6,12 @@ function score(state = 0, action = {}) {
     switch(action.type) {
         case SUBMIT:
             let score = 0;
-            for (let question in action.payload) {
-                if (question.userAnswer.trim().toLowerCase() === question.answer.trim().toLowerCase()) {
+
+            action.payload.questions.map((question) => {
+                if ((question.userAnswer !== undefined) && (question.answer.trim().toLowerCase() === question.userAnswer.trim().toLowerCase())){
                     score++
                 }
-            }
+            });
             return score;
         default:
             return state;

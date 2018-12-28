@@ -14,14 +14,14 @@ export default class Game extends React.Component {
             return(
                 <div>
                     <Navbar/>
-                    <h1>No hay preguntas en el servidor</h1>
+                    <h1 style={{color: 'red', textAlign: 'center'}}>No hay preguntas en el servidor</h1>
                 </div>
             )
         } else {
             return (
                 <div>
                     <Navbar/>
-                    <h3>Su puntuación es: {this.props.score} ({this.props.score * 100 / this.props.questions.length} % de aciertos)</h3>
+                    <h3 style={{fontStyle: 'oblique', textAlign:'center', color:'blue', fontSize:'50px'}}>Su puntuación es: {this.props.score} ({this.props.score * 100 / this.props.questions.length} % de aciertos)</h3>
 
                     <Content question={this.props.question} onQuestionAnswer={this.props.onQuestionAnswer}/>
 

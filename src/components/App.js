@@ -49,7 +49,12 @@ class App extends Component {
 
                       onSubmitQuestion = {(questions) => {
                           this.props.dispatch(submit(questions))
-                      }}/>
+                      }}
+
+                      onResetQuestions = {(questions) => {
+                          this.props.dispatch(initQuestions(questions))
+                      }}
+                />
             </div>
         );
     }

@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import {CHANGE_QUESTION, QUESTION_ANSWER} from "./actions";
+import {CHANGE_QUESTION, INIT_QUESTIONS, QUESTION_ANSWER} from "./actions";
 import {SUBMIT} from "./actions";
 
 function score(state = 0, action = {}) {
@@ -13,6 +13,8 @@ function score(state = 0, action = {}) {
                 }
             });
             return score;
+        case INIT_QUESTIONS:
+            return 0;
         default:
             return state;
     }
@@ -22,6 +24,8 @@ function finished(state = false, action = {}) {
     switch(action.type) {
         case SUBMIT:
             return true;
+        case INIT_QUESTIONS:
+            return false;
         default:
             return state;
     }
@@ -44,6 +48,8 @@ function questions(state = [], action = {}) {
                             userAnswer: action.payload.index === i ?
                                         action.payload.answer : question.userAnswer}
             });
+        case INIT_QUESTIONS:
+            return action.payload.questions;
         default:
             return state;
     }

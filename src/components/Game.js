@@ -14,7 +14,7 @@ export default class Game extends React.Component {
             return(
                 <div>
                     <Navbar/>
-                    <h1 style={{color: 'red', textAlign: 'center'}}>No hay preguntas en el servidor</h1>
+                    <h1 style={{color: 'blue', textAlign: 'center'}}>Cargando preguntas</h1>
                 </div>
             )
         } else {

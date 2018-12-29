@@ -1,12 +1,12 @@
 import React from 'react';
-import { questions } from "../assets/mock-data";
+/*import { questions } from "../assets/mock-data";*/ // Ya no lo necesito porque descargo del servidor.
 
 export default class Button extends React.Component {
 
     render() {
 
         switch (this.props.question.question) {
-            case questions[0].question:
+            case this.props.questions[0].question:
                 return(
                     <div style={{textAlign: 'center'}}>
                         <button style={{backgroundColor:'#ADFF2F', fontSize:'20px',
@@ -20,7 +20,7 @@ export default class Button extends React.Component {
                         <div style={{height: '15px'}} />
                     </div>
                 );
-            case questions[questions.length - 1].question:
+            case this.props.questions[this.props.questions.length - 1].question:
                 return(
                     <div style={{textAlign: 'center'}}>
                         <button style={{backgroundColor:'#ADFF2F', fontSize:'20px',

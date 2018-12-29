@@ -29,6 +29,8 @@ class App extends Component {
             <div>
                 <Game question={this.props.questions[this.props.currentQuestion]}
 
+                      finished={this.props.finished}
+
                       questions={this.props.questions}
 
                       onQuestionAnswer={(answer) => {
